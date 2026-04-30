@@ -1,9 +1,33 @@
+import {  useEffect} from 'react'
+import Searsh from "./Searsh"
+import "./searshStyle.css"
 
-export default function AllCountries(){
+function AllCountries(){
+    
+    function allCountryesContent(e){
+        return(
+            <div>{e[0]}</div>
+        )
+    }
+
+
+    useEffect(()=>{
+        fetch("data.json").then(
+            e=> e.json()
+        ).then(
+            e=> allCountryesContent(e)
+        )
+    },[])
     return(
         <>
-            <h1>all country</h1>
-            <h1>all country</h1>
+            <div className="searsh" >
+                <Searsh/>
+            </div>
+            <div className="atharCountryes">
+        {allCountryesContent}
+            </div>
         </>
     )
 }
+
+export default AllCountries
