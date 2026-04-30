@@ -1,0 +1,22 @@
+.country {
+    width: 20dvw;
+    height: 45vh;
+    background-color: white;
+}
+
+.country p{
+    margin-left: 10px;
+}
+.country h2{
+    margin-bottom: 10px;
+    margin-left: 10px;
+}
+
+.atharCountryes {
+    background-color: #ddd;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    justify-items: center;
+    grid-auto-flow: row;
+    gap: 25px;
+}
