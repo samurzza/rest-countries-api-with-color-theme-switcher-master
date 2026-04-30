@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react'
 import Searsh from "./Searsh"
 import "./searshStyle.css"
 import "./county.css"
+import {Link} from "react-router-dom"
 interface Country {
   name: string
   population: number
@@ -16,23 +17,28 @@ interface Country {
 
 function AllCountries(){
     const [countries, setCountries] = useState<Country[]>([])
+    // const [countrye, setCountry] = useState<string>()
     
-
+    
     useEffect(()=>{
         fetch("data.json")
         .then(res => res.json())
         .then(data => setCountries(data))
     },[])
-
-function allCountryesContent(e: Country) {
-    return (
-        <div className="country">
-            <img style={{width: `100%` ,height:`10dvw`}} src={e.flags.svg} alt="" />
-            <h2>{e.name}</h2>
-            <p>Population: {e.population}</p>
-            <p>Region: {e.region}</p>
-            {e.capital && <p>Capital: {e.capital}</p>}
-        </div>
+    
+    function allCountryesContent(e: Country) {
+        return (
+            <Link to={`/${e.alpha3Code}`}>
+                <div className="country" onClick={()=>{
+                    console.log(e.alpha3Code)
+                }}>
+                    <img style={{width: `100%` ,height:`10dvw`}} src={e.flags.svg} alt="" />
+                    <h2>{e.name}</h2>
+                    <p>Population: {e.population}</p>
+                    <p>Region: {e.region}</p>
+                    {e.capital && <p>Capital: {e.capital}</p>}
+                </div>
+            </Link>
     )
 }
 

@@ -4,6 +4,7 @@ import Brightness4RoundedIcon from '@mui/icons-material/Brightness4Rounded'
 import Brightness4TwoToneIcon from '@mui/icons-material/Brightness4TwoTone';
 import { Route , Routes  } from 'react-router-dom';
 import AllCountries from "./country/AllCountries"
+import OneCountry from "./country/OneCountry"
 
 function App() {
 
@@ -29,7 +30,7 @@ return (
 
   <Routes>
     <Route path='/' element={<AllCountries />}/>
-    <Route path='/contry' />
+    <Route path='/:contry' element={<OneCountry/>} />
   </Routes>
 </div>  
   )
