@@ -19,7 +19,7 @@ a {
 }
 
 .atharCountryes {
-    background-color: #ddd;
+    /* background-color: #ededed; */
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr;
     justify-items: center;
@@ -27,3 +27,4 @@ a {
     gap: 50px;
     padding: 0 40px;
 }
+

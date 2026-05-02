@@ -3,7 +3,6 @@ import Searsh from "./Searsh"
 import "./searshStyle.css"
 import "./county.css"
 import {Link} from "react-router-dom"
-import {useContext} from "react"
 interface Country {
   name: string
   population: number
@@ -15,10 +14,13 @@ interface Country {
   }
   alpha3Code: string
 }
+type CountyContextType = {
+  country: string;
+  setCountry: React.Dispatch<React.SetStateAction<string>>;
+};
 
-function AllCountries(){
+function AllCountries({setCountry}:CountyContextType){
     const [countries, setCountries] = useState<Country[]>([])
-    // const [countrye, setCountry] = useState<string>()
     
     
     useEffect(()=>{
@@ -31,9 +33,7 @@ function AllCountries(){
 
         return (
             <Link to={`/${e.alpha3Code}`}>
-                <div className="country" onClick={()=>{
-                    console.log(e.alpha3Code)
-                }}>
+                <div className="country" onClick={()=>{setCountry(e.alpha3Code)}}>
                     <img style={{width: `15dvw` ,height:`10dvw` , borderRadius:`15px 15px 0 0`}} src={e.flags.svg} alt="" />
                     <h2>{e.name}</h2>
                     <p>Population: {e.population}</p>
