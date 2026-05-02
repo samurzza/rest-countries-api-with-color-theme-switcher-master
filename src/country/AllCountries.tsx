@@ -3,6 +3,7 @@ import Searsh from "./Searsh"
 import "./searshStyle.css"
 import "./county.css"
 import {Link} from "react-router-dom"
+import {useContext} from "react"
 interface Country {
   name: string
   population: number
@@ -27,12 +28,13 @@ function AllCountries(){
     },[])
     
     function allCountryesContent(e: Country) {
+
         return (
             <Link to={`/${e.alpha3Code}`}>
                 <div className="country" onClick={()=>{
                     console.log(e.alpha3Code)
                 }}>
-                    <img style={{width: `100%` ,height:`10dvw`}} src={e.flags.svg} alt="" />
+                    <img style={{width: `15dvw` ,height:`10dvw` , borderRadius:`15px 15px 0 0`}} src={e.flags.svg} alt="" />
                     <h2>{e.name}</h2>
                     <p>Population: {e.population}</p>
                     <p>Region: {e.region}</p>
@@ -42,7 +44,7 @@ function AllCountries(){
     )
 }
 
-    return(
+    return( 
         <>
             <div className="searsh">
                 <Searsh/>

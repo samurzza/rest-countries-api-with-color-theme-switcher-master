@@ -5,8 +5,12 @@ import Brightness4TwoToneIcon from '@mui/icons-material/Brightness4TwoTone';
 import { Route , Routes  } from 'react-router-dom';
 import AllCountries from "./country/AllCountries"
 import OneCountry from "./country/OneCountry"
+import { CountyData } from "./contsxtFoulder/WachCounty"
 
 function App() {
+
+    const [county, setCountry] = useState<string>("")
+
 
 const [mode , serMode] = useState<string>(`Dark Mood`)
 const [calssModd , setClassMood] = useState<string>(`left`)
@@ -28,10 +32,13 @@ return (
       <p className="mood" style={{cursor:`pointer`}} onClick={Mood} > <span className={calssModd} >{mode === 'Dark Mood' ? <Brightness4TwoToneIcon /> : <Brightness4RoundedIcon /> }</span> { mode}</p>
     </div>
 
+
+  <CountyData.Provider  value={{county, setCountry}}>
   <Routes>
     <Route path='/' element={<AllCountries />}/>
     <Route path='/:contry' element={<OneCountry/>} />
   </Routes>
+  </CountyData.Provider >
 </div>  
   )
 }
