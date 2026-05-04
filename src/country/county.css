@@ -1,19 +1,23 @@
 .country {
-    width: 15dvw;
+    width: 20dvw;
     /* height: 40vh; */
     padding-bottom: 15px;
     background-color: white;
-    color:black;
+    color: black;
     border-radius: 15px;
 }
+
 a {
-  text-decoration: none;
-  color: inherit; /* حتى ما يتغير لون النص */
+    text-decoration: none;
+    color: inherit;
+    /* حتى ما يتغير لون النص */
 }
-.country p{
+
+.country p {
     margin-left: 10px;
 }
-.country h2{
+
+.country h2 {
     margin-bottom: 10px;
     margin-left: 10px;
 }
@@ -27,4 +31,3 @@ a {
     gap: 50px;
     padding: 0 40px;
 }
-

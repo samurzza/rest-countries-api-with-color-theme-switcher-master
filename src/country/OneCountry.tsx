@@ -56,18 +56,14 @@ export default function DataFromCountry({country}:CountyContextType){
 
                         <div className="allP">
                             <p>Native Name: {rr.name}</p>
-                            <p>Population: {rr.population}</p>
+                            <p>population: {rr.population}</p>
                             <p>Region: {rr.region}</p>
-                            <p>Region: {rr.subregion}</p>
+                            <p>Sub Region: {rr.subregion}</p>
                             {rr.capital && <p>Capital: {rr.capital}</p>}
-                            <p>Region: {rr.topLevelDomain}</p>
-                            <p>Region: {rr.currencies.map(e=> e.name)}</p>
-                            <p>Region: {rr.languages.map(e=>e.name)}</p>
-                            <p>Region: {rr.subregion}</p>
+                            <p>Top Level Domain: {rr.topLevelDomain}</p>
+                            <p>Currencies: {rr.currencies.map(e=> e.name)}</p>
+                            <p>Languages: {rr.languages.map(e=>e.name)}</p>
                             {rr.capital && <p>Capital: {rr.capital}</p>}
-                            <p>Region: {rr.topLevelDomain}</p>
-                            <p>Region: {rr.currencies.map(e=> e.name)}</p>
-                            <p>Region: {rr.languages.map(e=>e.name)}</p>
                         </div>
                     </div>
                 </div>

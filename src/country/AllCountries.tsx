@@ -34,7 +34,7 @@ function AllCountries({setCountry}:CountyContextType){
         return (
             <Link to={`/${e.alpha3Code}`}>
                 <div className="country" onClick={()=>{setCountry(e.alpha3Code)}}>
-                    <img style={{width: `15dvw` ,height:`10dvw` , borderRadius:`15px 15px 0 0`}} src={e.flags.svg} alt="" />
+                    <img style={{width: `100%` ,height:`10dvw` , borderRadius:`15px 15px 0 0`}} src={e.flags.svg} alt="" />
                     <h2>{e.name}</h2>
                     <p>Population: {e.population}</p>
                     <p>Region: {e.region}</p>
