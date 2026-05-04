@@ -8,7 +8,6 @@ import OneCountry from "./country/OneCountry"
 
 function App() {
 
-const [country, setCountry] = useState<string>('')
 
 const [mode , serMode] = useState<string>(`Dark Mood`)
 const [calssModd , setClassMood] = useState<string>(`left`)
@@ -31,8 +30,8 @@ return (
   </div>
 
   <Routes>
-    <Route path='/' element={<AllCountries  country={country} setCountry={setCountry}/>} />
-    <Route path='/:contry' element={<OneCountry country={country} setCountry={setCountry}/>} />
+    <Route path='/' element={<AllCountries  />} />
+    <Route path='/:contry' element={<OneCountry />} />
   </Routes>
 </div>  
   )

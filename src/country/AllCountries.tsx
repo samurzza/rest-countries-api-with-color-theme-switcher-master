@@ -14,21 +14,23 @@ interface Country {
   }
   alpha3Code: string
 }
-type CountyContextType = {
-  country: string;
-  setCountry: React.Dispatch<React.SetStateAction<string>>;
-};
+// type CountyContextType = {
+//   country: string;
+//   setCountry: React.Dispatch<React.SetStateAction<string>>;
+// };
 
-function AllCountries({setCountry}:CountyContextType){
+function AllCountries(){
     const [countries, setCountries] = useState<Country[]>([])
     
+    const [country, setCountry] = useState<string>()
+
     
     useEffect(()=>{
         fetch("data.json")
         .then(res => res.json())
         .then(data => setCountries(data))
     },[])
-    
+    console.log(country)
     function allCountryesContent(e: Country) {
 
         return (

@@ -1,11 +1,7 @@
 import {useState , useEffect} from "react"
 import "./OneCountryStyle.css"
 import {Link} from "react-router-dom"
-
-type CountyContextType = {
-  country: string;
-  setCountry: React.Dispatch<React.SetStateAction<string>>;
-};
+import {useParams} from 'react-router-dom'
 
 interface Country {
   name: string
@@ -34,36 +30,37 @@ interface Country {
 }
 
 
-export default function DataFromCountry({country}:CountyContextType){
+export default function DataFromCountry(){
         const [countries, setCountries] = useState<Country>()
         
+        const {contry} = useParams()
         
         useEffect(()=>{
             fetch("data.json")
             .then(res => res.json())
-            .then(data => data.find((e: Country) => e.alpha3Code === country))
+            .then(data => data.find((e: Country) => e.alpha3Code === contry))
             .then(result => setCountries(result))
-        }, [country])
+        }, [contry])
 
-        function countryAdd(rr:Country){
+        function renderCountry(country:Country){
             return(
-                <div className="oneCountry"  key={rr.alpha3Code} >
+                <div className="oneCountry"  key={country.alpha3Code} >
                     <div className="img">
-                    <img style={{width: `45dvw` }} src={rr.flags.svg} alt="" />
+                    <img style={{width: `45dvw` }} src={country.flags.svg} alt="" />
                     </div>
                     <div className="ditals">
-                        <h2>{rr.name}</h2>
+                        <h2>{country.name}</h2>
 
                         <div className="allP">
-                            <p>Native Name: {rr.name}</p>
-                            <p>population: {rr.population}</p>
-                            <p>Region: {rr.region}</p>
-                            <p>Sub Region: {rr.subregion}</p>
-                            {rr.capital && <p>Capital: {rr.capital}</p>}
-                            <p>Top Level Domain: {rr.topLevelDomain}</p>
-                            <p>Currencies: {rr.currencies.map(e=> e.name)}</p>
-                            <p>Languages: {rr.languages.map(e=>e.name)}</p>
-                            {rr.capital && <p>Capital: {rr.capital}</p>}
+                            <p>Native Name: {country.name}</p>
+                            <p>population: {country.population}</p>
+                            <p>Region: {country.region}</p>
+                            <p>Sub Region: {country.subregion}</p>
+                            {country.capital && <p>Capital: {country.capital}</p>}
+                            <p>Top Level Domain: {country.topLevelDomain}</p>
+                            <p>Currencies: {country.currencies.map(e=> e.name)}</p>
+                            <p>Languages: {country.languages.map(e=>e.name)}</p>
+                            {country.capital && <p>Capital: {country.capital}</p>}
                         </div>
                     </div>
                 </div>
@@ -73,10 +70,10 @@ export default function DataFromCountry({country}:CountyContextType){
         <>
         <div className="goBack">
             <Link to={`/`}>
-                <div className="toBack"><p>Go Back</p></div>
+                <div className="toBack"><p>{`<--`} Go Back</p></div>
             </Link>
         </div>
-        {countries && countryAdd(countries)}
+        {countries && renderCountry(countries)}
     </>
     )
 }
