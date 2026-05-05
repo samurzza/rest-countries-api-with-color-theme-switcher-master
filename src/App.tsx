@@ -5,12 +5,14 @@ import Brightness4TwoToneIcon from '@mui/icons-material/Brightness4TwoTone';
 import { Route , Routes  } from 'react-router-dom';
 import AllCountries from "./country/AllCountries"
 import OneCountry from "./country/OneCountry"
+import {searshContext} from "./context/searshContext.tsx"
 
 function App() {
 
-
-const [mode , serMode] = useState<string>(`Dark Mood`)
-const [calssModd , setClassMood] = useState<string>(`left`)
+  const [mode , serMode] = useState<string>(`Dark Mood`)
+  const [calssModd , setClassMood] = useState<string>(`left`)
+  // const [ssearshContext , setsSearshContext] = useState()
+  const [search, setSearch] = useState<string>("")
 
 function Mood(){
   if(mode === `Dark Mood`){
@@ -29,10 +31,12 @@ return (
     <p className="mood" style={{cursor:`pointer`}} onClick={Mood} > <span className={calssModd} >{mode === 'Dark Mood' ? <Brightness4TwoToneIcon /> : <Brightness4RoundedIcon /> }</span> { mode}</p>
   </div>
 
-  <Routes>
-    <Route path='/' element={<AllCountries  />} />
-    <Route path='/:contry' element={<OneCountry />} />
-  </Routes>
+    <searshContext.Provider  value={{search, setSearch }}>
+      <Routes>
+        <Route path='/' element={<AllCountries  />} />
+        <Route path='/:contry' element={<OneCountry />} />
+      </Routes>
+    </searshContext.Provider  >
 </div>  
   )
 }

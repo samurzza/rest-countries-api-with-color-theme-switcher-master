@@ -3,6 +3,9 @@ import Searsh from "./Searsh"
 import "./searshStyle.css"
 import "./county.css"
 import {Link} from "react-router-dom"
+import {useContext} from "react"
+import { searshContext } from "../context/searshContext.tsx"
+
 interface Country {
   name: string
   population: number
@@ -14,29 +17,40 @@ interface Country {
   }
   alpha3Code: string
 }
-// type CountyContextType = {
-//   country: string;
-//   setCountry: React.Dispatch<React.SetStateAction<string>>;
-// };
+
 
 function AllCountries(){
     const [countries, setCountries] = useState<Country[]>([])
     
     const [country, setCountry] = useState<string>()
 
+    const { search } = useContext(searshContext);
+
     
     useEffect(()=>{
         fetch("data.json")
         .then(res => res.json())
         .then(data => setCountries(data))
+        // .then(filter => filter.find((e: Country) => e.alpha3Code === filter))
     },[])
-    console.log(country)
-    function allCountryesContent(e: Country) {
 
+    useEffect(()=>{
+       if(search != ""){
+        countries.filter((e:Country) =>{
+            e.name.toLowerCase().includes(search.toLowerCase())
+        })
+       }
+    },[search])
+
+    // console.log(country)
+    
+
+    function allCountryesContent(e: Country) {
+// width: `100%` ,height:`15dvw` ,
         return (
             <Link to={`/${e.alpha3Code}`}>
                 <div className="country" onClick={()=>{setCountry(e.alpha3Code)}}>
-                    <img style={{width: `100%` ,height:`10dvw` , borderRadius:`15px 15px 0 0`}} src={e.flags.svg} alt="" />
+                    <img className='imgg' src={e.flags.svg} alt="" />
                     <h2>{e.name}</h2>
                     <p>Population: {e.population}</p>
                     <p>Region: {e.region}</p>
