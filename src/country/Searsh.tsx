@@ -1,4 +1,4 @@
-import {useState} from "react"
+// import {useState} from "react"
 import { useContext } from "react";
 import { searshContext } from "../context/searshContext";
 
@@ -8,7 +8,6 @@ export default function SearshCountyes(){
       const { search, setSearch } = useContext(searshContext);
 
 
-    // const [searsh , setSearsh] = useState<string>()
 
 
 

@@ -18,7 +18,7 @@
     font-size: xx-large;
 }
 
-.img{
+.img {
     display: inline-block;
 }
 
@@ -27,7 +27,7 @@ a {
     color: inherit;
 }
 
-.goBack{
+.goBack {
     width: 100dvw;
     height: 150px;
     display: flex;
@@ -44,9 +44,9 @@ a {
     cursor: pointer;
 }
 
-.toBack:hover{
+.toBack:hover {
     background-color: rgb(233, 233, 233);
-    
+
 }
 
 
@@ -56,5 +56,5 @@ a {
     /* background-color: aliceblue; */
     grid-template-columns: 1.1fr 1fr;
     gap: 15px;
-    width: 60%;
+    width: 70%;
 }
