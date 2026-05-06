@@ -21,6 +21,7 @@ interface Country {
 
 function AllCountries(){
     const [countries, setCountries] = useState<Country[]>([])
+    const [allSearch, setAllSearch] = useState<Country[]>([])
     
     const [country, setCountry] = useState<string>()
 
@@ -31,22 +32,22 @@ function AllCountries(){
         fetch("data.json")
         .then(res => res.json())
         .then(data => setCountries(data))
-        // .then(filter => filter.find((e: Country) => e.alpha3Code === filter))
     },[])
 
     useEffect(()=>{
        if(search != ""){
-        countries.filter((e:Country) =>{
-            e.name.toLowerCase().includes(search.toLowerCase())
+           countries.filter((e:Country) =>{
+           e.name.toLowerCase().includes(search.toLowerCase()) ? setAllSearch(e) : "" 
         })
        }
+       
+       console.log(allSearch)
     },[search])
 
-    // console.log(country)
+    console.log(country)
     
 
     function allCountryesContent(e: Country) {
-// width: `100%` ,height:`15dvw` ,
         return (
             <Link to={`/${e.alpha3Code}`}>
                 <div className="country" onClick={()=>{setCountry(e.alpha3Code)}}>
@@ -60,6 +61,18 @@ function AllCountries(){
     )
 }
 
+function allCountry(ccc){
+    return(
+        ccc.map((country) => (
+        <div key={country.alpha3Code}>
+            {allCountryesContent(country)}
+        </div>
+        ))
+    )
+}
+
+
+
     return( 
         <>
             <div className="searsh">
@@ -67,11 +80,7 @@ function AllCountries(){
             </div>
 
             <div className="atharCountryes">
-                {countries.map((country) => (
-                    <div key={country.alpha3Code}>
-                        {allCountryesContent(country)}
-                    </div>
-                ))}
+                {allSearch !== `` ?allCountry():searchCounty() }
             </div>
         </>
     )
