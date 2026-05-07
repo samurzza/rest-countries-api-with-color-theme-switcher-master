@@ -7,11 +7,7 @@ import SearchIcon from '@mui/icons-material/Search';
 
 export default function SearshCountyes(){
 
-      const { search, setSearch } = useContext(searshContext);
-
-
-
-
+    const { search, setSearch } = useContext(searshContext);
 
     return(
         <>
@@ -20,7 +16,16 @@ export default function SearshCountyes(){
         <input className="searchInput" type="search" value={search} placeholder="country name" onChange={(e)=>{setSearch(e.target.value)}} />
         </div>
             
-        <div style={{width:`50px` , backgroundColor:`red`}}>a</div>
+        <div className="region">
+            COUNTEIRI  PLA...
+            <div className="text">
+                <p>Africa</p>
+                <p>America</p>
+                <p>Asia</p>
+                <p>Europe</p>
+                <p>Oceania</p>
+            </div>      
+        </div>
         </>
     )
 }

@@ -5,6 +5,7 @@
     align-items: center;
     padding: 0 40px;
 }
+
 .searsh .searchInput{
     width: 450px;
     height: 45px;
@@ -14,4 +15,33 @@
     font-size: x-large;
     padding-left: 70px;
     color: #a8a8a8;
+}
+
+.region {
+    box-shadow: 5px 4px 9px 1px #c0c0c0;
+    background-color: white;
+    padding: 15px;
+    height: 15px;
+    width: 180px;
+    position: relative;
+}
+
+.region .text {
+    padding: 5px;
+    width: 210px;
+    position: absolute;
+    left: 0;
+}
+
+.region .text p {
+    padding: 5px;
+    /* margin: 5px; */
+    background-color: white;
+    transition: all 0.5s ease;
+    cursor: pointer;
+}
+
+.region .text p:hover {
+    background-color: rgb(212, 212, 212);
+
 }
