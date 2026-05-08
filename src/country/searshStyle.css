@@ -18,30 +18,20 @@
 }
 
 .region {
+    width: 180px;
+    position: relative;
+    background-color: aqua;
+}
+
+#delectField{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 83.25%;
     box-shadow: 5px 4px 9px 1px #c0c0c0;
     background-color: white;
     padding: 15px;
-    height: 15px;
-    width: 180px;
-    position: relative;
+    height: 100%;
+    margin-bottom: 15px;
 }
 
-.region .text {
-    padding: 5px;
-    width: 210px;
-    position: absolute;
-    left: 0;
-}
-
-.region .text p {
-    padding: 5px;
-    /* margin: 5px; */
-    background-color: white;
-    transition: all 0.5s ease;
-    cursor: pointer;
-}
-
-.region .text p:hover {
-    background-color: rgb(212, 212, 212);
-
-}

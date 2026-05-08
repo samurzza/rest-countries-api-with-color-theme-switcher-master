@@ -2,6 +2,7 @@
 import { useContext } from "react";
 import { searshContext } from "../context/searshContext";
 import SearchIcon from '@mui/icons-material/Search';
+import ArrowCircleDownIcon from '@mui/icons-material/ArrowCircleDown';
 
 
 
@@ -17,14 +18,18 @@ export default function SearshCountyes(){
         </div>
             
         <div className="region">
-            COUNTEIRI  PLA...
-            <div className="text">
-                <p>Africa</p>
-                <p>America</p>
-                <p>Asia</p>
-                <p>Europe</p>
-                <p>Oceania</p>
-            </div>      
+            <div id="delectField">
+                <p>sealect Region</p>
+                <span><ArrowCircleDownIcon /></span>
+            </div>  
+
+            <ul>
+                <li>Africa</li>
+                <li>America</li>
+                <li>Asia</li>
+                <li>Europe</li>
+                <li>Oceania</li>
+            </ul>    
         </div>
         </>
     )
