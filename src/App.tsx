@@ -6,6 +6,7 @@ import { Route , Routes  } from 'react-router-dom';
 import AllCountries from "./country/AllCountries"
 import OneCountry from "./country/OneCountry"
 import {searshContext} from "./context/searshContext.tsx"
+import {SelectContext} from "./context/SelectContext.tsx"
 
 function App() {
 
@@ -13,6 +14,7 @@ function App() {
   const [calssModd , setClassMood] = useState<string>(`left`)
   // const [ssearshContext , setsSearshContext] = useState()
   const [search, setSearch] = useState<string>("")
+  const [select , setSelect ] = useState<string>("")
 
 function Mood(){
   if(mode === `Dark Mood`){
@@ -32,10 +34,12 @@ return (
   </div>
 
     <searshContext.Provider  value={{search, setSearch }}>
-      <Routes>
-        <Route path='/' element={<AllCountries  />} />
-        <Route path='/:contry' element={<OneCountry />} />
-      </Routes>
+      <SelectContext.Provider  value={{ select , setSelect }}>
+        <Routes>
+          <Route path='/' element={<AllCountries  />} />
+          <Route path='/:contry' element={<OneCountry />} />
+        </Routes>
+      </SelectContext.Provider  >
     </searshContext.Provider  >
 </div>  
   )

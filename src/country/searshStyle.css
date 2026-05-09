@@ -1,9 +1,10 @@
 .searsh {
-    height: 8vw;
+    /* height: 5vw; */
     display: flex;
+    padding: 25px 40px;
+    flex-direction: row;
     justify-content: space-between;
-    align-items: center;
-    padding: 0 40px;
+    align-items: flex-start;
 }
 
 .searsh .searchInput{
@@ -26,15 +27,15 @@
     right: 55px;
 }
 
-#delectField{
+#delectField {
     cursor: pointer;
     display: flex;
     justify-content: space-between;
     align-items: center;
     box-shadow: 5px 4px 9px 1px #c0c0c0;
     background-color: white;
-    padding: 10px;
-    height: 100%;
+    padding: 5px 10px;
+    height: 35px;
     margin-bottom: 15px;
 }
 

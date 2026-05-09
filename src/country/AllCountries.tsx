@@ -5,6 +5,8 @@ import "./county.css"
 import {Link} from "react-router-dom"
 import {useContext} from "react"
 import { searshContext } from "../context/searshContext.tsx"
+import { SelectContext } from "../context/SelectContext";
+
 
 interface Country {
   name: string
@@ -25,6 +27,7 @@ function AllCountries(){
     const [country, setCountry] = useState<string>()
 
     const { search } = useContext(searshContext);
+    const { select } = useContext(SelectContext);
 
     
     useEffect(()=>{
@@ -33,10 +36,15 @@ function AllCountries(){
         .then(data => setCountries(data))
         
     },[])
+
+
+const regon = select || search
+    ? countries.filter(e => e.region.toLowerCase().includes(select.toLowerCase())) || countries.filter(e => e.name.toLowerCase().includes(search.toLowerCase()))
+    : countries
     
 const filtered = search 
-    ? countries.filter(e => e.name.toLowerCase().includes(search.toLowerCase()))
-    : countries
+    ? regon.filter(e => e.name.toLowerCase().includes(search.toLowerCase()))
+    : regon
 
 
 
