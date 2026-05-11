@@ -1,7 +1,9 @@
-import {useState , useEffect} from "react"
+import {useState , useEffect , useContext} from "react"
 import "./OneCountryStyle.css"
 import {Link} from "react-router-dom"
 import {useParams} from 'react-router-dom'
+import { MoodContext } from "../context/MoodContext.tsx"
+
 
 interface Country {
   name: string
@@ -34,6 +36,8 @@ export default function DataFromCountry(){
         const [countries, setCountries] = useState<Country>()
         
         const {contry} = useParams()
+        const { mood } = useContext(MoodContext);
+
         
         useEffect(()=>{
             fetch("data.json")
@@ -48,7 +52,7 @@ export default function DataFromCountry(){
                     <div className="img">
                     <img style={{width: `45dvw` }} src={country.flags.svg} alt="" />
                     </div>
-                    <div className="ditals">
+                    <div className="ditals" style={{color:mood===`Dark Mood` ?`white`: `black`}}>
                         <h2>{country.name}</h2>
 
                         <div className="allP">
@@ -70,7 +74,7 @@ export default function DataFromCountry(){
         <>
         <div className="goBack">
             <Link to={`/`}>
-                <div className="toBack"><p>{`<--`} Go Back</p></div>
+                <div className="toBack" style={{backgroundColor:mood===`Dark Mood` ? `hsl(209, 23%, 22%)`: `hsl(0, 0%, 100%)` , color:mood===`Dark Mood`?`white`:`black` ,boxShadow:mood===`Dark Mood` ?`5px 4px 9px 1px #575757`:`5px 4px 9px 1px #c0c0c0`}}><p>{`<--`} Go Back</p></div>
             </Link>
         </div>
         {countries && renderCountry(countries)}

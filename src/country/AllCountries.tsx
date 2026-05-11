@@ -6,6 +6,7 @@ import {Link} from "react-router-dom"
 import {useContext} from "react"
 import { searshContext } from "../context/searshContext.tsx"
 import { SelectContext } from "../context/SelectContext";
+import { MoodContext } from "../context/MoodContext.tsx"
 
 
 interface Country {
@@ -28,7 +29,9 @@ function AllCountries(){
 
     const { search } = useContext(searshContext);
     const { select } = useContext(SelectContext);
+    const { mood } = useContext(MoodContext);
 
+    console.log(mood)
     
     useEffect(()=>{
         fetch("data.json")
@@ -52,7 +55,7 @@ const filtered = search
     function allCountryesContent(e: Country) {
         return (
             <Link to={`/${e.alpha3Code}`}>
-                <div className="country" onClick={()=>{setCountry(e.alpha3Code)}}>
+                <div className="country" style={{backgroundColor:mood===`Dark Mood` ? `hsl(209, 23%, 22%)`: `hsl(0, 0%, 100%)` , color:mood===`Dark Mood`?`white`:`black`}} onClick={()=>{setCountry(e.alpha3Code)}}>
                     <img className='imgg' src={e.flags.svg} alt="" />
                     <h2>{e.name}</h2>
                     <p>Population: {e.population}</p>
@@ -75,7 +78,7 @@ function allCountry(countr){
 
     return( 
         <>
-            <div className="searsh">
+            <div className="searsh" >
                 <Searsh/>
             </div>
 

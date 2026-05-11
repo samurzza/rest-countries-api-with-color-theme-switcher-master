@@ -3,7 +3,7 @@
     display: flex;
     justify-content: space-between;
     margin: 0 5dvw;
-    background-color: white;
+    /* background-color: white; */
 }
 
 .ditals {
@@ -32,7 +32,7 @@ a {
     height: 150px;
     display: flex;
     align-items: center;
-    background-color: #ededed;
+    /* background-color: #ededed; */
 }
 
 .toBack {
