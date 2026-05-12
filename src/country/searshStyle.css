@@ -1,71 +1,149 @@
-.searsh {
-    /* height: 5vw; */
-    display: flex;
-    padding: 25px 40px;
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: flex-start;
-}
-
-.searsh .searchInput{
-    width: 450px;
-    height: 45px;
-    outline: none;
-    border: none;
-    /* box-shadow: 5px 4px 9px 1px #c0c0c0; */
-    font-size: x-large;
-    padding-left: 70px;
-    color: #a8a8a8;
-}
-
-.region {
-    width: 190px;
-    display: flex;
-    flex-direction: column;
-    position: absolute;
-    top: 90px;
-    right: 55px;
-}
-
-#delectField {
-    cursor: pointer;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    /* box-shadow: 5px 4px 9px 1px #c0c0c0; */
-    background-color: white;
-    padding: 5px 10px;
-    height: 35px;
-    margin-bottom: 15px;
-}
-
-
-.region ul {
-    background-color: white;
-    list-style: none;
+@media (min-width:376px) {
+    .searsh {
+            /* height: 5vw; */
+            display: flex;
+            padding: 25px 40px;
+            flex-direction: row;
+            justify-content: space-between;
+            align-items: flex-start;
+        }
     
+        .searsh .searchInput {
+            width: 450px;
+            height: 45px;
+            outline: none;
+            border: none;
+            /* box-shadow: 5px 4px 9px 1px #c0c0c0; */
+            font-size: x-large;
+            padding-left: 70px;
+            color: #a8a8a8;
+        }
+    
+        .region {
+            width: 190px;
+            display: flex;
+            flex-direction: column;
+            position: absolute;
+            top: 90px;
+            right: 55px;
+        }
+    
+        #delectField {
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            /* box-shadow: 5px 4px 9px 1px #c0c0c0; */
+            background-color: white;
+            padding: 5px 10px;
+            height: 35px;
+            margin-bottom: 15px;
+        }
+    
+    
+        .region ul {
+            background-color: white;
+            list-style: none;
+    
+        }
+    
+        .region ul li {
+            padding: 5px;
+            transition: all 0.4s ease;
+            cursor: pointer;
+        }
+    
+        .region ul li:hover {
+            background-color: rgb(202, 202, 202);
+    
+        }
+    
+        .top {
+            transform: rotate(0deg);
+            transition: all .5s ease;
+            display: flex;
+            align-items: center;
+        }
+    
+        .bottum {
+            transform: rotate(180deg);
+            transition: all .5s ease;
+            display: flex;
+            align-items: center;
+        }
 }
-.region ul li {
-    padding: 5px;
-    transition: all 0.4s ease;
-    cursor: pointer;
-}
 
-.region ul li:hover {
-    background-color: rgb(202, 202, 202);
+@media (min-width:220px) and (max-width:375px) {
+    .searsh {
+        height: 125px;
+        display: grid;
+        grid-template-rows: 1fr 1fr;
+        padding: 15px;
+        justify-items: center;
+        align-items: center;
+    }
 
-}
-
-.top{
-    transform: rotate(0deg);
-    transition: all .5s ease;
-    display: flex;
-    align-items: center;
-} 
-
-.bottum{
-    transform: rotate(180deg);
-    transition: all .5s ease;
-    display: flex;
-    align-items: center;
+    .searsh .searchInput {
+        width: 90%;
+        height: 45px;
+        outline: none;
+        border: none;
+        /* box-shadow: 5px 4px 9px 1px #c0c0c0; */
+        font-size: x-large;
+        padding-left: 55px;
+    }
+    
+    .region {
+        width: 220px;
+        display: flex;
+        flex-direction: column;
+        position: absolute;
+        top: 170px;
+        right: 70px;
+    }
+    
+    #delectField {
+        cursor: pointer;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        /* box-shadow: 5px 4px 9px 1px #c0c0c0; */
+        background-color: white;
+        padding: 5px 10px;
+        height: 35px;
+        margin-bottom: 15px;
+        grid-area: select;
+    }
+    
+    
+        .region ul {
+            background-color: white;
+            list-style: none;
+    
+        }
+    
+        .region ul li {
+            padding: 5px;
+            transition: all 0.4s ease;
+            cursor: pointer;
+        }
+    
+        .region ul li:hover {
+            background-color: rgb(202, 202, 202);
+    
+        }
+    
+        .top {
+            transform: rotate(0deg);
+            transition: all .5s ease;
+            display: flex;
+            align-items: center;
+        }
+    
+        .bottum {
+            transform: rotate(180deg);
+            transition: all .5s ease;
+            display: flex;
+            align-items: center;
+        }
 }
