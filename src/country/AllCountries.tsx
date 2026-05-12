@@ -26,6 +26,7 @@ function AllCountries(){
     const [countries, setCountries] = useState<Country[]>([])
     
     const [country, setCountry] = useState<string>()
+    console.log(country)
 
     const { search } = useContext(searshContext);
     const { select } = useContext(SelectContext);
@@ -66,7 +67,7 @@ const filtered = search
     )
 }
 
-function allCountry(countr){
+function allCountry(countr:Country[]){
     return(
         countr.map((country:Country) => (
         <div key={country.alpha3Code}>
