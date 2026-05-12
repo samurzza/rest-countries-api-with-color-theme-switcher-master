@@ -37,9 +37,11 @@ import { MoodContext } from "../context/MoodContext.tsx"
     }
     
     const styleStele = {
-        display:selectHidin
+        display:selectHidin,
+        backgroundColor:mood===`Dark Mood` ? `hsl(209, 23%, 22%)`: `hsl(0, 0%, 100%)` ,
+        color:mood===`Dark Mood`?`white`:`black`
     }
-
+// 
 
     function chinge(){
     if(selectHidin === `block`){
@@ -62,7 +64,7 @@ import { MoodContext } from "../context/MoodContext.tsx"
         <div className="region">
             <div onClick={chinge} id="delectField" style={{backgroundColor:mood===`Dark Mood` ? `hsl(209, 23%, 22%)`: `hsl(0, 0%, 100%)` , color:mood===`Dark Mood`?`white`:`black` ,boxShadow:mood===`Dark Mood` ?`5px 4px 9px 1px #575757`:`5px 4px 9px 1px #c0c0c0`}}>
                 <p>{select || "Filter By Region"}</p>
-                <p><span  className={calssModd}><ArrowCircleDownIcon /></span></p>
+                <p><span  className={calssModd }><ArrowCircleDownIcon /></span></p>
             </div>  
 
             <ul style={styleStele}>

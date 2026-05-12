@@ -31,7 +31,7 @@ function Mood(){
 
 return (
   <div style={{width:`98dvw`, minHeight: `98.1dvh` ,paddingBottom:`15px`,backgroundColor:mood===`Dark Mood` ? `hsl(207, 26%, 17%)`: `hsl(0, 0%, 89%)`}} className="boody">
-      <div className="nav" style={{backgroundColor:`hsl(0, 0%, 99%)` }}>
+      <div className="nav" style={{backgroundColor:mood===`Dark Mood` ? `hsl(209, 23%, 22%)`: `hsl(0, 0%, 100%)` , color:mood===`Dark Mood`?`white`:`black` }}>
         <p style={{fontWeight:`800` , fontSize:`x-large`}}>Where in the world?</p>
         <p className="mood" style={{cursor:`pointer`}} onClick={Mood} > <span className={calssModd} >{mood === 'Dark Mood' ? <Brightness4TwoToneIcon /> : <Brightness4RoundedIcon /> }</span> { mood}</p>
       </div>

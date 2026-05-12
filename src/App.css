@@ -2,14 +2,14 @@
   font-family: 'Nunito Sans', sans-serif;
   padding: 0;
   margin: 0;
-  transition: all 0.3s ease;
+  transition: all 0.1s ease;
 }
 
 .nav {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background-color: white;
+  /* background-color: white; */
   padding: 10px 2.5%;
   width: 95%;
 }
