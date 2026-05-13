@@ -97,10 +97,10 @@
         flex-direction: column;
         width: 220px;
         display: flex;
-        position: absolute;
-        top: 25%;
+        /* position: absolute; */
+        /* top: 26.5%;
         right: 50%;
-        transform: translate(50%, -50%);
+        transform: translate(50%, -50%); */
     }
     
     #delectField {
@@ -117,16 +117,17 @@
     }
     
     
-        .region ul {
-            background-color: white;
-            list-style: none;
-    
-        }
-    
+    .region ul {
+        background-color: white;
+        list-style: none;
+        z-index: 99;
+    }
+
         .region ul li {
             padding: 5px;
             transition: all 0.4s ease;
             cursor: pointer;
+            margin: 15px;
         }
     
         .region ul li:hover {
