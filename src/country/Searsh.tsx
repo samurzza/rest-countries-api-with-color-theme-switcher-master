@@ -58,11 +58,11 @@ import { MoodContext } from "../context/MoodContext.tsx"
         <   >
         <div>
             <SearchIcon  style={{transform: `translate(45px, 5px)`, color:`#a8a8a8`}} />
-        <input className="searchInput" style={{backgroundColor:mood===`Dark Mood` ? `hsl(209, 23%, 22%)`: `hsl(0, 0%, 100%)` , color:mood===`Dark Mood`?`white`:`black` ,boxShadow:mood===`Dark Mood` ?`5px 4px 9px 1px #575757`:`5px 4px 9px 1px #c0c0c0`}} type="search" value={search} placeholder="country name" onChange={(e)=>{setSearch(e.target.value)}} />
+        <input className="searchInput" style={{backgroundColor:mood===`Dark Mood` ? `hsl(209, 23%, 22%)`: `hsl(0, 0%, 100%)` , color:mood===`Dark Mood`?`white`:`black` ,boxShadow:mood===`Dark Mood` ?`2px 1px 14px 1px rgb(45 45 45 / 77%)`:`5px 4px 9px 1px #c0c0c0`}} type="search" value={search} placeholder="country name" onChange={(e)=>{setSearch(e.target.value)}} />
         </div>
             
         <div className="region">
-            <div onClick={chinge} id="delectField" style={{backgroundColor:mood===`Dark Mood` ? `hsl(209, 23%, 22%)`: `hsl(0, 0%, 100%)` , color:mood===`Dark Mood`?`white`:`black` ,boxShadow:mood===`Dark Mood` ?`5px 4px 9px 1px #575757`:`5px 4px 9px 1px #c0c0c0`}}>
+            <div onClick={chinge} id="delectField" style={{backgroundColor:mood===`Dark Mood` ? `hsl(209, 23%, 22%)`: `hsl(0, 0%, 100%)` , color:mood===`Dark Mood`?`white`:`black` ,boxShadow:mood===`Dark Mood` ?`2px 1px 14px 1px rgb(45 45 45 / 77%)`:`5px 4px 9px 1px #c0c0c0`}}>
                 <p>{select || "Filter By Region"}</p>
                 <p><span  className={calssModd }><ArrowCircleDownIcon /></span></p>
             </div>  

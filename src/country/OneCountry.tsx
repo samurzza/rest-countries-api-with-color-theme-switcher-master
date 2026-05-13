@@ -48,9 +48,9 @@ export default function DataFromCountry(){
 
         function renderCountry(country:Country){
             return(
-                <div className="oneCountry"  key={country.alpha3Code} >
+                <div className="oneCountry"  key={country.alpha3Code}  >
                     <div className="img">
-                    <img style={{width: `45dvw` }} src={country.flags.svg} alt="" />
+                    <img src={country.flags.svg} alt="" />
                     </div>
                     <div className="ditals" style={{color:mood===`Dark Mood` ?`white`: `black`}}>
                         <h2>{country.name}</h2>
@@ -74,7 +74,7 @@ export default function DataFromCountry(){
         <>
         <div className="goBack">
             <Link to={`/`}>
-                <div className="toBack" style={{backgroundColor:mood===`Dark Mood` ? `hsl(209, 23%, 22%)`: `hsl(0, 0%, 100%)` , color:mood===`Dark Mood`?`white`:`black` ,boxShadow:mood===`Dark Mood` ?`5px 4px 9px 1px #575757`:`5px 4px 9px 1px #c0c0c0`}}><p>{`<--`} Go Back</p></div>
+                <div className="toBack" style={{backgroundColor:mood===`Dark Mood` ? `hsl(209, 23%, 22%)`: `hsl(0, 0%, 100%)` , color:mood===`Dark Mood`?`white`:`black` ,boxShadow:mood===`Dark Mood` ?`2px 1px 14px 1px rgb(45 45 45 / 77%)`:`5px 4px 9px 1px #c0c0c0`}}><p>{`<--`} Go Back</p></div>
             </Link>
         </div>
         {countries && renderCountry(countries)}
