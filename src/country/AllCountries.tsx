@@ -34,12 +34,11 @@ function AllCountries(){
 
     console.log(mood)
     
-    useEffect(()=>{
-        fetch("data.json")
-        .then(res => res.json())
-        .then(data => setCountries(data))
-        
-    },[])
+useEffect(() => {
+    fetch("/data.json")
+    .then(res => res.json())
+    .then(data => setCountries(data))
+}, [])
 
 
 const regon = select || search
